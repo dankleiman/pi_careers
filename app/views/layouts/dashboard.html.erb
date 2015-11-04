@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : 'Pathfinder International Careers' %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='container'>
+    <div class='row'>
+    </div>
+    <div class='row panel panel-body'>
+      <div class='col-md-12'>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20151031185012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "department_roles", force: :cascade do |t|
+    t.integer  "department_id"
+    t.integer  "role_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "department_roles", ["department_id"], name: "index_department_roles_on_department_id", using: :btree
+  add_index "department_roles", ["role_id"], name: "index_department_roles_on_role_id", using: :btree
+
   create_table "departments", force: :cascade do |t|
     t.string   "name"
     t.integer  "organization_id"
@@ -24,6 +34,16 @@ ActiveRecord::Schema.define(version: 20151031185012) do
   end
 
   add_index "departments", ["organization_id"], name: "index_departments_on_organization_id", using: :btree
+
+  create_table "job_skills", force: :cascade do |t|
+    t.integer  "skill_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "job_skills", ["role_id"], name: "index_job_skills_on_role_id", using: :btree
+  add_index "job_skills", ["skill_id"], name: "index_job_skills_on_skill_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
