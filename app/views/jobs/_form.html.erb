@@ -1,0 +1,12 @@
+<%= simple_form_for(@job) do |job_form| %>
+  <div>
+    <%= job_form.association :department %>
+  </div>
+  <div>
+    <%= job_form.association :role %>
+  </div>
+  <div>
+    <%= job_form.button :submit, { class: 'btn btn-default btn-small' } %>
+  </div>
+<% end %>
+

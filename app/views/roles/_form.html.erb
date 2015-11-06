@@ -1,15 +1,18 @@
-<%= form_for(@role) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<%= simple_form_for(@role) do |role_form| %>
+  <div>
+    <%= role_form.input :name, label: 'Name' %>
   </div>
-  <% Department.all.each do |department| %>
-     <div class="field">
-      <%= f.label department.name %><br>
-      <%= f.check_box :department_ids, { multiple: true }, department.name %>
-    </div>
-  <% end %>
-  <div class="actions">
-    <%= f.submit %>
+  <div>In the following Departments (check all that apply):</div>
+  <div>
+    <%= role_form.simple_fields_for(:department_roles) do |department_form| %>
+        <div>
+
+          <%= department_form.collection_check_boxes(:department, :department_ids, Department.all, :id, :name) %>
+        </div>
+    <% end %>
+  </div>
+  <div>
+    <%= role_form.button :submit, { class: 'btn btn-default btn-small' } %>
   </div>
 <% end %>
+

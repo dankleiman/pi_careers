@@ -19,6 +19,8 @@ class RolesController < ApplicationController
 
   # GET /roles/1/edit
   def edit
+    @role = Role.find(params[:id])
+    @departments = Department.all
   end
 
   # POST /roles
@@ -26,28 +28,19 @@ class RolesController < ApplicationController
   def create
     @role = Role.new(role_params)
 
-    respond_to do |format|
-      if @role.save
-        format.html { redirect_to @role, notice: 'Role was successfully created.' }
-        format.json { render :show, status: :created, location: @role }
-      else
-        format.html { render :new }
-        format.json { render json: @role.errors, status: :unprocessable_entity }
-      end
+    if @role.save
+      redirect_to @role, notice: 'Role was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /roles/1
-  # PATCH/PUT /roles/1.json
   def update
-    respond_to do |format|
-      if @role.update(role_params)
-        format.html { redirect_to @role, notice: 'Role was successfully updated.' }
-        format.json { render :show, status: :ok, location: @role }
-      else
-        format.html { render :edit }
-        format.json { render json: @role.errors, status: :unprocessable_entity }
-      end
+    if @role.update(role_params)
+      redirect_to @role, notice: 'Role was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -69,6 +62,6 @@ class RolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def role_params
-      params.require(:role).permit(:name)
+      params.require(:role).permit(:name, department_roles_attributes: [ :id, :role_id, department_id: [:id] ])
     end
 end

@@ -3,5 +3,15 @@
   <%= @role.name %>
 </p>
 
+<strong>Departments with <%= @role.name %>:</strong>
+<ul>
+<% @role.departments.each do |department| %>
+  <li><%= department.name %></li>
+<% end %>
+</ul>
+
+
+
+
 <%= link_to 'Edit', edit_role_path(@role) %> |
 <%= link_to 'Back', roles_path %>

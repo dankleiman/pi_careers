@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :organizations
 
+  resources :jobs
+
   root 'dashboard#example_one'
 
 end

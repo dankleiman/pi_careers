@@ -5,14 +5,29 @@
     <li>
       <%= department.name %>
       <ul>
-        <% department.roles.each do |role| %>
+        <% department.department_roles.each do |department_role| %>
           <li>
-            <%= role.name %>
+            <%= department_role.role.try(:name) %>
               <ul>
-                <% role.skills.each do |skill| %>
+                <% department_role.skills.each do |skill| %>
                   <li><%= skill.name %></li>
                  <% end %>
               </ul>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @roles.each  do |role| %>
+    <li>
+      <%= role.name %>
+      <ul>
+        <% role.departments.each do |department| %>
+          <li>
+            <%= department.name %>
           </li>
         <% end %>
       </ul>
