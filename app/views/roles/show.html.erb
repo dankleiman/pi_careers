@@ -1,17 +1,30 @@
-<p>
-  <strong>Name:</strong>
-  <%= @role.name %>
-</p>
+<h2><%= @role.name %></h2>
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <strong>Core <%= @role.name %> Skills:</strong>
+      <%= @role.core_skills.map(&:name).join(", ") %>
+    </p>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Departments with <%= @role.name %></th>
+        </tr>
+      </thead>
 
-<strong>Departments with <%= @role.name %>:</strong>
-<ul>
-<% @role.departments.each do |department| %>
-  <li><%= department.name %></li>
-<% end %>
-</ul>
-
-
-
-
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+      <tbody>
+        <% @role.jobs.each do |job| %>
+          <tr>
+            <td><%= link_to job.department.name, job_path(job) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

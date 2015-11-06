@@ -3,14 +3,17 @@
     <li class="<%= 'active' if current_page?(root_path) %>">
       <%= link_to('Home', root_url) %>
     </li>
+    <li class="<%= 'active' if current_page?(jobs_path) %>">
+      <%= link_to('Jobs', jobs_path) %>
+    </li>
     <li class="<%= 'active' if current_page?(departments_path) %>">
       <%= link_to('Departments', departments_path) %>
     </li>
     <li class="<%= 'active' if current_page?(roles_path) %>">
       <%= link_to('Roles', roles_path) %>
     </li>
-        <li class="<%= 'active' if current_page?(jobs_path) %>">
-      <%= link_to('Jobs', jobs_path) %>
+    <li class="<%= 'active' if current_page?(skills_path) %>">
+      <%= link_to('Skills', skills_path) %>
     </li>
   </ul>
 

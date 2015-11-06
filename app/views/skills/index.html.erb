@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Skills</h1>
+<h1>Skills</h1>
 
-<table>
+<div class='pull-right'><%= link_to 'New Skill', new_skill_path %></div>
+
+<table class='table'>
   <thead>
     <tr>
       <th>Name</th>
@@ -21,7 +23,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Skill', new_skill_path %>
