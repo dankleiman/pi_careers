@@ -33,6 +33,14 @@ class JobsController < ApplicationController
   def show
   end
 
+  def compare
+    @job = Job.new
+  end
+
+  def add
+    @job = Job.find_by(department_id: params[:job][:department_id], role_id: params[:job][:role_id])
+  end
+
   private
 
     def set_job

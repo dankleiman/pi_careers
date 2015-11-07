@@ -1,0 +1,15 @@
+<h2>Compare Jobs</h2>
+<div class="row">
+  <%= simple_form_for(@job, remote: true, url: 'jobs/add', html: { class: 'form-inline' }) do |job_form| %>
+    <div class="form-group">
+      <%= job_form.association :department %>
+    </div>
+    <div class="form-group">
+      <%= job_form.association :role %>
+    </div>
+    <div class="form-group">
+      <%= job_form.button :submit, 'Add Job', { class: 'btn btn-default btn-small' } %>
+    </div>
+  <% end %>
+</div>
+<div class="row"><div id="jobs"></div></div>

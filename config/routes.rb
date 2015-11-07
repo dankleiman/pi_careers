@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :skills
 
   resources :roles
@@ -8,8 +9,12 @@ Rails.application.routes.draw do
 
   resources :organizations
 
-  resources :jobs
+  resources :jobs do
+    collection do
+      post 'add'
+    end
+  end
 
-  root 'dashboard#example_one'
+  root 'jobs#compare'
 
 end
