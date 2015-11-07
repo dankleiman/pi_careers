@@ -8,7 +8,7 @@
       <%= job_form.association :role, label: false, include_blank: 'Select a role' %>
     </div>
     <div class="form-group">
-      <%= job_form.button :submit, 'Add Job', { class: 'btn btn-default btn-small button-inline' } %>
+      <%= job_form.button :submit, 'Add Job', { class: 'btn btn-info btn-small button-inline' } %>
       <%= link_to 'Clear All', '#', onclick: "$('#jobs').children('div.job-column').remove(); return false;" %>
     </div>
   <% end %>
