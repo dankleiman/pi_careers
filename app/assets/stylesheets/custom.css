@@ -1,5 +1,7 @@
  /*Additional Modifications to Bootstrap Custom*/
 body { padding-top: 7em; }
+
+/*Job Comparisons Tool*/
 .job-column {
   margin: 1em;
 }
@@ -16,9 +18,29 @@ body { padding-top: 7em; }
   color: white;
   background-color: #3EB1C8;
   padding: 10px;
+  min-height: 200px;
 }
 .job-skills {
   color: white;
   background-color: #34A798;
   padding: 10px;
+  min-height: 100px;
+}
+.job-row{
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid white;
+}
+
+/*Inline form*/
+
+.form-inline {
+  padding: 5px;
+}
+.form-inline .form-group select {
+  margin: 0 10px 0 5px;
+}
+.form-inline .button-inline {
+  margin: 0 5px 0 10px;
 }

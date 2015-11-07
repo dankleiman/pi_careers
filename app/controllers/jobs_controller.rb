@@ -38,7 +38,9 @@ class JobsController < ApplicationController
   end
 
   def add
-    @job = Job.find_by(department_id: params[:job][:department_id], role_id: params[:job][:role_id])
+    unless @job = Job.find_by(department_id: params[:job][:department_id], role_id: params[:job][:role_id])
+      render :compare
+    end
   end
 
   private
