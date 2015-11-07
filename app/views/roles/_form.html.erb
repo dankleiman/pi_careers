@@ -6,7 +6,7 @@
     <%= role_form.association :departments, as: :check_boxes, collection: Department.all.to_a, label_method: :name %>
   </div>
   <div>
-    <%= role_form.button :submit, { class: 'btn btn-info btn-small' } %>
+    <%= role_form.button :submit, { class: 'btn btn-info btn-small actions' } %>
   </div>
 <% end %>
 

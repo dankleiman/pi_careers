@@ -44,3 +44,7 @@ body { padding-top: 7em; }
 .form-inline .button-inline {
   margin: 0 5px 0 10px;
 }
+
+/*Forms*/
+
+.actions {margin: 20px 0;}

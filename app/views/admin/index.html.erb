@@ -1,0 +1,33 @@
+<h2>Admin</h2>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Manage</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Departments</td>
+      <td><%= link_to 'View All', departments_path %></td>
+      <td><%= link_to 'New Department', new_department_path %></td>
+    </tr>
+    <tr>
+      <td>Roles</td>
+      <td><%= link_to 'View All', roles_path %></td>
+      <td><%= link_to 'New Role', new_role_path %></td>
+    </tr>
+    <tr>
+      <td>Jobs</td>
+      <td><%= link_to 'View All', jobs_path %></td>
+      <td><%= link_to 'New Job', new_job_path %></td>
+    </tr>
+    <tr>
+      <td>Skills</td>
+      <td><%= link_to 'View All', skills_path %></td>
+      <td><%= link_to 'New Skill', new_skill_path %></td>
+    </tr>
+  </tbody>
+</table>
+

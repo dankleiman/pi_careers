@@ -9,7 +9,7 @@
     <%= job_form.association :skills, as: :check_boxes, collection: Skill.all.to_a, label_method: :name %>
   </div>
   <div>
-    <%= job_form.button :submit, { class: 'btn btn-info btn-small' } %>
+    <%= job_form.button :submit, { class: 'btn btn-info btn-small actions' } %>
   </div>
 <% end %>
 

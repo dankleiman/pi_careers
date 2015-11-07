@@ -3,11 +3,7 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :organization_id %><br>
-    <%= f.collection_select :organization_id, Organization.all, :id, :name %>
-  </div>
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary btn-small' %>
+    <%= f.submit class: 'btn btn-info btn-small' %>
   </div>
 <% end %>
