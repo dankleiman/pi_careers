@@ -9,6 +9,7 @@
     </div>
     <div class="form-group">
       <%= job_form.button :submit, 'Add Job', { class: 'btn btn-default btn-small' } %>
+      <%= link_to 'Clear All', '#', onclick: "$('#jobs').children('div.job-column').remove(); return false;" %>
     </div>
   <% end %>
 </div>

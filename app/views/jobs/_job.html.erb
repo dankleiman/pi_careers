@@ -1,18 +1,25 @@
-<div class="row job-department">
-  <p class="text-center"><%= job.department.name %></p>
-</div>
-<div class="row job-role">
-  <p class="text-center"><%= job.role.name %></p>
-</div>
-<div class="row job-core-skills">
-  <p class="text-left">
-    <strong>Core <%= job.role.name %> Skills:</strong>
-    <%= job.core_skills.map(&:name).join(", ") %>
-  </p>
-</div>
-<div class="row job-skills">
-  <p class="text-left">
-    <strong><%= job.department.name %> Specific Skills:</strong>
-    <%= job.skills.map(&:name).join(", ") %>
-  </p>
-</div>
+<div class="job-column">
+  <div class="row job-department">
+    <p class="text-center"><%= job.department.name %></p>
+  </div>
+  <div class="row job-role">
+    <p class="text-center"><%= job.role.name %></p>
+  </div>
+  <div class="row job-core-skills">
+    <p class="text-left">
+      <strong>Core <%= job.role.name %> Skills:</strong>
+      <%= job.core_skills.map(&:name).join(", ") %>
+    </p>
+  </div>
+  <div class="row job-skills" style=<%= job.core ? 'display:none' : '' %>>
+    <p class="text-left">
+      <strong><%= job.department.name %> Specific Skills:</strong>
+      <%= job.skills.map(&:name).join(", ") %>
+    </p>
+  </div>
+  <div class="row">
+     <p class="text-center">
+      <%= link_to 'Remove', '#', onclick: "$(this).closest('div.job-column').remove(); return false;" %>
+    </p>
+  </div>
+<div>

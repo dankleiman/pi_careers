@@ -1,8 +1,12 @@
  /*Additional Modifications to Bootstrap Custom*/
 body { padding-top: 7em; }
+.job-column {
+  margin: 1em;
+}
 .job-department {
   color: white;
   background-color: #5F2167;
+  margin-top: 3em;
 }
 .job-role {
   color: white;
@@ -11,8 +15,10 @@ body { padding-top: 7em; }
 .job-core-skills {
   color: white;
   background-color: #3EB1C8;
+  padding: 10px;
 }
 .job-skills {
   color: white;
   background-color: #34A798;
+  padding: 10px;
 }
