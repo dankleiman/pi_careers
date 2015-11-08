@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   # GET /skills
